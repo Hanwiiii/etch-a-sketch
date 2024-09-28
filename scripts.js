@@ -15,5 +15,28 @@ function newDiv() {
     }
 };
 
+const myButton = document.querySelector("#myButton");
+
+myButton.addEventListener("click", () => {
+    while (container.hasChildNodes()) {
+        container.removeChild(container.firstChild);
+    }
+});
+
+myButton.addEventListener("click", () => {
+    let userInput = prompt("New grid size: ");
+    for (let i = 0; i < userInput * userInput; i++) {
+        let userDivs = document.createElement("div");
+        userDivs.style.backgroundColor = "lightyellow";
+        userDivs.className = "userDivs";
+        container.appendChild(userDivs);
+        userDivs.addEventListener("mouseenter", event => {
+            event.target.style.backgroundColor = "green";
+        })
+        userDivs.addEventListener("mouseleave", event => {
+            event.target.style.backgroundColor = "lightgreen";
+        })
+    }
+})
 
 newDiv();
