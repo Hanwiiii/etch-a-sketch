@@ -25,18 +25,24 @@ myButton.addEventListener("click", () => {
 
 myButton.addEventListener("click", () => {
     let userInput = prompt("New grid size: ");
-    for (let i = 0; i < userInput * userInput; i++) {
-        let userDivs = document.createElement("div");
-        userDivs.style.backgroundColor = "lightyellow";
-        userDivs.className = "userDivs";
-        container.appendChild(userDivs);
-        userDivs.addEventListener("mouseenter", event => {
-            event.target.style.backgroundColor = "green";
-        })
-        userDivs.addEventListener("mouseleave", event => {
-            event.target.style.backgroundColor = "lightgreen";
-        })
+    if (userInput < 101) {
+        for (let i = 0; i < userInput * userInput; i++) {
+            let userDivs = document.createElement("div");
+            userDivs.style.backgroundColor = "lightyellow";
+            userDivs.className = "userDivs";
+            container.appendChild(userDivs);
+            userDivs.addEventListener("mouseenter", event => {
+                event.target.style.backgroundColor = "green";
+            });
+            userDivs.addEventListener("mouseleave", event => {
+                event.target.style.backgroundColor = "lightgreen";
+            });
+        }
     }
-})
+    else {
+        alert("This size exceeds the maximum of 100!");
+    }
+    
+});
 
 newDiv();
