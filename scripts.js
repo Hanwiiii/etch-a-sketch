@@ -7,10 +7,10 @@ function newDiv() {
         createDiv.className = "newDivs";
         container.appendChild(createDiv);
         createDiv.addEventListener("mouseenter", event => {
-            event.target.style.backgroundColor = "green";
+            event.target.style.backgroundColor = "black";
         });
         createDiv.addEventListener("mouseleave", event => {
-            event.target.style.backgroundColor = "lightgreen";
+            event.target.style.backgroundColor = "lightgray";
         });
     }
 };
@@ -24,6 +24,7 @@ myButton.addEventListener("click", () => {
 });
 
 myButton.addEventListener("click", () => {
+    let heightAndWidth = 100;
     let userInput = prompt("New grid size: ");
     if (userInput < 101) {
         for (let i = 0; i < userInput * userInput; i++) {
@@ -32,11 +33,13 @@ myButton.addEventListener("click", () => {
             userDivs.className = "userDivs";
             container.appendChild(userDivs);
             userDivs.addEventListener("mouseenter", event => {
-                event.target.style.backgroundColor = "green";
+                event.target.style.backgroundColor = "black";
             });
             userDivs.addEventListener("mouseleave", event => {
-                event.target.style.backgroundColor = "lightgreen";
+                event.target.style.backgroundColor = "lightgray";
             });
+            userDivs.style.height = (heightAndWidth / userInput) + "%";
+            userDivs.style.width = (heightAndWidth / userInput) + "%";
         }
     }
     else {

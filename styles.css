@@ -28,6 +28,4 @@ body {
 .userDivs {
     box-sizing: border-box;
     border: 1px solid black;
-    height: calc(100%/16);
-    width: calc(100%/16);
 }
